@@ -5,45 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- tailwindcss cdn link  -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- daisyUI cdn link  -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <!-- Bootsrap cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
     <!-- site title  -->
     <title>Current-Report</title>
-
-    </style>
   </head>
-  <body>
-    <header class="">
-      <div class="navbar bg-indigo-900 text-white">
-        <div class="flex-1 ml-10">
-          <a class="btn btn-ghost normal-case text-2xl font-bold"
-            ><span class="text-pink-400 mr-2"> Current </span> Report</a
-          >
+  <body >
+    <!-- style="background-color:#e3f2fd #a8c9e2 ;" -->
+    <header>
+        <div style="background-color: #a8c9e2;">
+        <div class="container" >
+        <nav class="navbar navbar-expand-lg navbar-light row" >
+            <a class="navbar-brand fw-bold fs-3 col col-lg-10 col-md-7 col-sm-8 col-8" href="#"><span class="text-primary">Current</span> Report</a>
+            <button class="navbar-toggler col col-md-1 col-sm-1 col-1 col-lg-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse col col-lg-2" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link text-secondary" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-secondary" href="#">Blog</a>
+               
+              </ul>
+            </div>
+          </nav>
         </div>
-        <div class="flex-none mr-10">
-          <ul class="menu menu-horizontal p-0">
-            <li><a>News</a></li>
-            <li><a>Blog</a></li>
-          </ul>
         </div>
-      </div>
-      <div class="">
-        <div
-          class="navbar mb-2 shadow-lg bg-neutral text-neutral-content"
-        >
-          <div
-            id="categories-list"
-            class="hidden px-2 mx-2 navbar-center lg:flex"
-          ></div>
+        <div style="background-color:#e3f2fd">
+        <div class="container">
+        <nav id="categories-list" class="navbar navbar-expand-lg navbar-light d-flex justify-content-center">
+           
+          </nav>
         </div>
-      </div>
+        </div>
+        
+    </div>
     </header>
+    <section>
+
+    </section>
+    
+
+    <!-- Bootsrap cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <!-- my js files  -->
     <script src="js/utilities.js"></script>
+
   </body>
 </html>

@@ -15,12 +15,10 @@ const headerCategories = (categorieValue) => {
   console.log(categorieValue);
   const categoriesList = document.getElementById("categories-list");
   categorieValue.forEach((catValue) => {
-    const categoriesItems = document.createElement("ul");
-    categoriesItems.classList.add("myClass");
+    const categoriesItems = document.createElement("div");
+    categoriesItems.classList.add("navbar-nav");
     categoriesItems.innerHTML = `
-      
-    <li class='mx-5 hover:text-blue-300 px-5 py-2 rounded-xl hover:bg-slate-800' >${catValue.category_name}</li>
-
+    <a class="nav-item nav-link mx-lg-3 mx-md-3 mx-sm-2 mx-1 px-lg-3 px-md-2 px-sm-1 px-1" href="#">${catValue.category_name}</a>
       `;
     categoriesList.appendChild(categoriesItems);
   });
