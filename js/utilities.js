@@ -29,7 +29,6 @@ const headerCategories = (categorieValue) => {
 siteApi();
 
 const cardImages = async (category_id) => {
-  console.log(category_id);
   const url = ` https://openapi.programming-hero.com/api/news/category/0${category_id}`;
 
   try {
@@ -45,8 +44,10 @@ const cardImages = async (category_id) => {
 // card dynamic html creating
 const cardId = document.getElementById("card-info");
 const cardValues = (cardInfo) => {
-  console.log(cardInfo);
-
+  // console.log(cardInfo);
+  const CardLength = document.getElementById("category-count");
+  CardLength.innerText = cardInfo.length;
+ 
   cardInfo.forEach((singleCard) => {
     const detailsLength = singleCard.details.length;
 
@@ -78,7 +79,7 @@ const cardValues = (cardInfo) => {
                       }"> <span>${
         singleCard.author.name ? singleCard.author.name : "No data available"
       }</span></p>
-                      <p class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span> ${
+                      <p id="view-count" class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span> ${
                         singleCard.total_view
                           ? singleCard.total_view
                           : "No data available"
@@ -138,7 +139,11 @@ const cardValues = (cardInfo) => {
 // on click button function
 const btnClick = (buttonValue) => {
   const btnName = buttonValue;
+  let cardName = document.getElementById("category-name");
+  cardName.innerText = btnName;
+
   cardId.innerText = "";
+
   if (btnName === "Breaking News") {
     cardImages(1);
   } else if (btnName === "Regular News") {
@@ -157,4 +162,4 @@ const btnClick = (buttonValue) => {
     cardImages(8);
   }
 };
-cardImages(8);
+// cardImages(8);
