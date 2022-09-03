@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Document</title>
+    <title>Current Report</title>
   </head>
   <body>
     <!-- top header section  -->
@@ -48,6 +48,120 @@
         </nav>
       </div>
     </div>
+    <!-- card section  -->
+    <section class="bg-light">
+      <div class="container my-5">
+        <div class="row mb-lg-5 mb-md-5 mb-sm-4 mb-4 justify-content-center">
+          <div
+            class="col col-lg-5 col-md-5 col-sm-10 col-10 card text-white bg-primary me-lg-5 me-md-4 me-sm-2 me-2"
+          >
+            <div class="card-header">Question No: 01</div>
+            <div class="card-body">
+              <h5 class="card-title">Different between var, let and const</h5>
+              <ul class="card-text">
+                <li>
+                  var is function-scoped while let and const are block-scoped.
+                </li>
+                <li>
+                  var variables can be reassigned while let and const variables
+                  can not.
+                </li>
+                <li>
+                  var variables are declared using the var keyword while let and
+                  const variables are declared using the let and const keywords
+                  respectively.
+                </li>
+                <li>
+                  const variables are immutable while let and var variables are
+                  not.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col col-lg-5 col-md-5 col-sm-10 col-10 mt-sm-5 mt-5 mt-lg-0 mt-md-0 card text-white bg-secondary"
+          >
+            <div class="card-header">Question No: 02</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                Different between arrow function and regular function
+              </h5>
+              <ul class="card-text">
+                <li>
+                  Inside of a regular JavaScript function, this value is
+                  dynamic. But The behavior of this inside of an arrow function
+                  differs considerably from the regular function's this
+                  behavior. The arrow function doesn't define its own execution
+                  context.
+                </li>
+                <li>
+                  As seen in the previous section, the regular function can
+                  easily construct objects.But A consequence of this resolved
+                  lexically is that an arrow function cannot be used as a
+                  constructor.
+                </li>
+                <li>
+                  Inside the body of a regular function, arguments is a special
+                  array-like object containing the list of arguments with which
+                  the function has been invoked. On the other side, no arguments
+                  special keyword is defined inside an arrow function.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row my-5 justify-content-center">
+          <div
+            class="col col-lg-5 col-md-5 col-sm-10 col-10 card text-white bg-success me-lg-5 me-md-4 me-sm-2 me-2"
+          >
+            <div class="card-header">Question No: 03</div>
+            <div class="card-body">
+              <h5 class="card-title">
+                Different between map(), forEach(), filter(), find()
+              </h5>
+              <ul class="card-text">
+                <li>
+                  forEach(), is used to execute the same code on every element
+                  in an array but does not change the array and it returns
+                  undefined.
+                </li>
+                <li>
+                  map() executes the same code on every element in an array and
+                  returns a new array with the updated elements.
+                </li>
+                <li>
+                  filter() checks every element in an array to see if it meets a
+                  certain criteria and returns a new array with the elements
+                  that return truthy for the criteria.
+                </li>
+                <li>
+                  find() method is used to find all the descendant elements of
+                  the selected element. It finds the element in the DOM tree by
+                  traversing through the root to leaf.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col col-lg-5 col-md-5 col-sm-10 col-10 mt-sm-5 mt-5 mt-lg-0 mt-md-0 card text-white bg-danger"
+          >
+            <div class="card-header">Question No: 04</div>
+            <div class="card-body">
+              <h5 class="card-title">Why we use template string?</h5>
+              <p class="card-text">
+                Template literals are sometimes informally called template
+                strings, because they are used most commonly for string
+                interpolation (to create strings by doing substitution of
+                placeholders). However, a tagged template literal may not result
+                in a string; it can be used with a custom tag function to
+                perform whatever operations you want on the different parts of
+                the template literal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Bootsrap cdn  -->
     <script
