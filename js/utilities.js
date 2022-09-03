@@ -42,10 +42,10 @@ const cardImages = async (category_id) => {
   }
 };
 
-// card dynamic html creating 
+// card dynamic html creating
 const cardId = document.getElementById("card-info");
 const cardValues = (cardInfo) => {
-  // console.log(cardInfo);
+  console.log(cardInfo);
 
   cardInfo.forEach((singleCard) => {
     const cardItemCreate = document.createElement("div");
@@ -57,14 +57,14 @@ const cardValues = (cardInfo) => {
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">${singleCard.details}</p>
-                      <div class="d-flex">
-                      <p class="card-text me-lg-5 me-md-4 me-sm-2 me-1">Last updated 3 mins ago</p>
-                      <p class="card-text me-lg-5 me-md-4 me-sm-2 me-1"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      <h5 class="card-title">${singleCard.title}</h5>
+                      <p class="card-text"> ${singleCard.details}</p>
+                      <div class=" row align-items-center">
+                      <p class="col card-text me-lg-5 me-md-4 me-sm-2 me-1"><img class="me-1" style="height:50; width:50px; border-radius:100%" src="${singleCard.author.img}"> <span>${singleCard.author.name}</span></p>
+                      <p class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span>${singleCard.total_view}</span></p>
                       <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary me-lg-5 me-md-4 me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Launch demo modal
+                        <button type="button" class="col col-lg-2 h-25 btn btn-primary me-lg-5 me-md-4 me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Know More
                         </button>
                         
                         <!-- Modal -->
