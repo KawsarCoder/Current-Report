@@ -48,20 +48,41 @@ const cardValues = (cardInfo) => {
   console.log(cardInfo);
 
   cardInfo.forEach((singleCard) => {
-    const cardItemCreate = document.createElement("div");
-    cardItemCreate.classList.add("card");
-    cardItemCreate.innerHTML = `
+    const detailsLength = singleCard.details.length;
+
+    if (detailsLength >= 100) {
+      const slicing = singleCard.details.slice(0, 300);
+
+      const cardItemCreate = document.createElement("div");
+      cardItemCreate.classList.add("card");
+      cardItemCreate.innerHTML = `
     <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="${singleCard.image_url}" class="img-fluid rounded-start" alt="...">
+                    <img src="${
+                      singleCard.image_url
+                        ? singleCard.image_url
+                        : "No data available"
+                    }" class="img-fluid rounded-start" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">${singleCard.title}</h5>
-                      <p class="card-text"> ${singleCard.details}</p>
+                      <h5 class="card-title">${
+                        singleCard.title
+                          ? singleCard.title
+                          : "no data available"
+                      }</h5>
+                      <p class="card-text"> ${slicing}...</p>
                       <div class=" row align-items-center">
-                      <p class="col card-text me-lg-5 me-md-4 me-sm-2 me-1"><img class="me-1" style="height:50; width:50px; border-radius:100%" src="${singleCard.author.img}"> <span>${singleCard.author.name}</span></p>
-                      <p class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span>${singleCard.total_view}</span></p>
+                      <p class="col card-text me-lg-5 me-md-4 me-sm-2 me-1"><img class="me-1" style="height:50; width:50px; border-radius:100%" src="${
+                        singleCard.author.img
+                      }"> <span>${
+        singleCard.author.name ? singleCard.author.name : "No data available"
+      }</span></p>
+                      <p class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span> ${
+                        singleCard.total_view
+                          ? singleCard.total_view
+                          : "No data available"
+                      }</span></p>
                       <!-- Button trigger modal -->
                         <button type="button" class="col col-lg-2 h-25 btn btn-primary me-lg-5 me-md-4 me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Know More
@@ -72,15 +93,34 @@ const cardValues = (cardInfo) => {
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">${
+                                  singleCard.author.name
+                                    ? singleCard.author.name
+                                    : "No data available"
+                                }</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                ...
+                                <p>Publish Date: ${
+                                  singleCard.author.published_date
+                                    ? singleCard.author.published_date
+                                    : "No data available"
+                                }</p>
+                                <p>Batch: ${
+                                  singleCard.rating.batch
+                                    ? singleCard.rating.batch
+                                    : "No data available"
+                                }</p>
+                                <p>Rating: ${
+                                  singleCard.rating.number
+                                    ? singleCard.rating.number
+                                    : "No data available"
+                                }</p>
+
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                
                                 </div>
                             </div>
                             </div>
@@ -90,7 +130,8 @@ const cardValues = (cardInfo) => {
                   </div>
                 </div>
   //     `;
-    cardId.appendChild(cardItemCreate);
+      cardId.appendChild(cardItemCreate);
+    }
   });
 };
 
