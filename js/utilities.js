@@ -68,18 +68,18 @@ const cardValues = (cardInfo) => {
                             <p class="card-text"> ${
                               singleCard.details
                                 ? singleCard.details.slice(0, 300) + "..."
-                                : "No data found"
+                                : "No details found"
                             }</p>
                             <div class=" row align-items-center">
                             <p class="col card-text me-lg-5 me-md-4 me-sm-2 me-1"><img class="me-1" style="height:50; width:50px; border-radius:100%" src="${
                               singleCard.author.img
                             }"> <span>${
-      singleCard.author.name ? singleCard.author.name : "No data available"
+      singleCard.author.name ? singleCard.author.name : "Athor name not found"
     }</span></p>
                             <p id="view-count" class="col card-text align-middle me-lg-5 me-md-4 me-sm-2 me-1"> <span class="me-1"><i class="fa-solid fa-eye"></i></span> <span> ${
                               singleCard.total_view
                                 ? singleCard.total_view
-                                : "No data available"
+                                : "No views found"
                             }</span></p>
                             <!-- Button trigger modal -->
                               <button type="button" class="col col-lg-2 h-25 btn btn-primary me-lg-5 me-md-4 me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -95,7 +95,7 @@ const cardValues = (cardInfo) => {
                                       <h5 class="modal-title" id="exampleModalLabel">${
                                         singleCard.author.name
                                           ? singleCard.author.name
-                                          : "No data available"
+                                          : "author name not found"
                                       }</h5>
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
@@ -106,17 +106,17 @@ const cardValues = (cardInfo) => {
                                       <p>Publish Date: ${
                                         singleCard.author.published_date
                                           ? singleCard.author.published_date
-                                          : "No data available"
+                                          : "No date found"
                                       }</p>
                                       <p>Batch: ${
                                         singleCard.rating.batch
                                           ? singleCard.rating.batch
-                                          : "No data available"
+                                          : "No batch found"
                                       }</p>
                                       <p>Rating: ${
                                         singleCard.rating.number
                                           ? singleCard.rating.number
-                                          : "No data available"
+                                          : "No rating available"
                                       }</p>
       
                                       </div>
@@ -143,6 +143,8 @@ const cardValues = (cardInfo) => {
 };
 // on click button function
 const btnClick = (buttonValue) => {
+  const welcomeImg = document.getElementById("welcome-image");
+  welcomeImg.classList.add("visually-hidden");
   const btnName = buttonValue;
   let cardName = document.getElementById("category-name");
   cardName.innerText = btnName;
