@@ -9,7 +9,7 @@ const siteApi = async () => {
     // console.log(data);
     headerCategories(newsData);
   } catch (error) {
-    console.log("not found");
+    console.log("Categories not found");
   }
 };
 
@@ -37,10 +37,10 @@ const cardImages = async (category_id) => {
     // console.log(data.data);
     cardValues(data.data);
   } catch (error) {
-    console.log("not found");
+    console.log("Categoy data not found");
   }
 };
-
+const spinnerSection = document.getElementById("loding-spner");
 // card dynamic html creating
 const cardId = document.getElementById("card-info");
 const cardValues = (cardInfo) => {
@@ -134,6 +134,7 @@ const cardValues = (cardInfo) => {
       cardId.appendChild(cardItemCreate);
     }
   });
+  spinnerSection.classList.add("invisible");
 };
 
 // on click button function
@@ -142,6 +143,7 @@ const btnClick = (buttonValue) => {
   let cardName = document.getElementById("category-name");
   cardName.innerText = btnName;
 
+  spinnerSection.classList.remove("invisible");
   cardId.innerText = "";
 
   if (btnName === "Breaking News") {
